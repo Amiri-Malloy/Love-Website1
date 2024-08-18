@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Document with PDF Embed and Links">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title> Amort </title>
+    <style>
+        .pdf-controls {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .pdf-controls button {
+            margin: 5px 0;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .pdf-controls button:hover {
+            background-color: #0056b3;
+        }
+
+        .bottom-links {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .bottom-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
+            color: #007BFF;
+        }
+
+        .pdf-controls img,
+        .bottom-links img {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="pdf-controls">
+        <button onclick="printPDF()">Print PDF</button>
+        <a href="LoveStatementpdf.pdf" download="LoveStatementpdf.pdf">
+            <button>Save PDF</button>
+        </a>
+    </div>
+
+    <embed src="LoveStatementpdf.pdf" type="application/pdf" width="100%" height="900px">
+
+    <div class="bottom-links">
+        <a href="index.html">Home</a>
+        <a href="letters.html">My Love Letter</a>
+        <a href="audio.html">Music</a>
+        <a href="video.html">Video</a>
+        <a href="adventures.html">Travel</a>
+        <a href="Financials.html"> Income Statement </a>
+    </div>
+
+    <script>
+        function printPDF() {
+            let iframe = document.createElement('iframe');
+            iframe.style.visibility = 'hidden';
+            iframe.src = 'LoveStatementpdf.pdf';
+            document.body.appendChild(iframe);
+            iframe.contentWindow.focus();
+            iframe.contentWindow.print();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Maps">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Love Tour</title>
+
+
+    <!-- Leaflet.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet.js JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body style="background-color: #E6E6FA;">
+    <h1> I'd Go Anywhere With You...</h1>
+
+    <!-- Map Container -->
+    <div id="map" style="width: 100%; height: 800px;"></div>
+
+    <script>
+        // Initialize the map and set its view to a global view
+        var map = L.map('map').setView([0, 0], 2);
+
+        // Add the OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add markers for various locations
+        var locations = [
+            { coords: [17.1, -61.8], title: "Antigua", description: "Our First Baecation" },
+            // { coords: [48.8566, 2.3522], title: "Paris", description: "Romantic City" },
+            // { coords: [35.6895, 139.6917], title: "Tokyo", description: "Vibrant Metropolis" },
+            // Add more locations here
+        ];
+
+        locations.forEach(function (location) {
+            var marker = L.marker(location.coords).addTo(map);
+            marker.bindPopup("<b>" + location.title + "</b><br>" + location.description);
+        });
+    </script>
+
+    <div class="bottom-links">
+        <a href="index.html"> Home</a>
+        <a href="letters.html">My Love Letter</a>
+        <a href="audio.html">Music</a>
+        <a href="video.html">Video</a>
+        <!-- <a href="favorites.html">Lists</a> 
+        <a href="text.html">Text</a> -->
+
+        <a href="Financials.html"> Income Statement </a>
+        <a href="amortization.html"> Amortization </a>
+
+    </div>
+</body>
