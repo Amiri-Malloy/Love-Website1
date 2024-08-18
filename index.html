@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Expressing my love for Sean">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title> Our Love Story </title>
+    <style>
+        /* Add your CSS styling here */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            /* Prevents any overflow from images */
+        }
+
+        .mySlides {
+            display: none;
+            position: relative;
+            width: 100%;
+        }
+
+        .fade {
+            animation: fade 1.5s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 20px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 3px;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.6);
+            text-align: center;
+            line-height: 1.5;
+            z-index: 100;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .bottom-links {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .bottom-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body style="background-color:#FFF0F5;">
+    <header>
+        <!--
+            <nav>
+            <a href="Letters"> My Love Letter</a>
+            <a href="Audio">Music Choice</a>
+            <a href="Gallery"> Images</a>
+            <a href="Adventures"> Travels</a>
+            <a href="In Awe">Favorites</a>
+            <a href="Future">Time Travel</a>
+            <a href="Notes"> Comments</a>
+        </nav> -->
+    </header>
+    <main>
+        <h1 style="color:rgb(255,0,119);">Journey Through Love</h1>
+        <hr />
+        <p>
+            <marquee> Words can't express how much <big> <i> <b>I love you</b></i></big>, </marquee>
+            <marquee direction="right" behavior="alternate" style="border:black 2px solid">
+                but I hope this website gives you an idea.
+            </marquee>
+        </p>
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <div class="numbertext">1/9</div>
+                <img src="Gala.JPG" style="width:100%;">
+                <div class="text">Us at a gala</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2/9</div>
+                <img src="Baseball.JPG" style="width:100%;">
+                <div class="text">Our first METS game</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3/9</div>
+                <img src="Holding_WhiteDress_Water.JPG" style="width:100%;">
+                <div class="text">Day 2 in Antigua</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">4/9</div>
+                <img src="MiniGolf_Date.JPG" style="width:100%;">
+                <div class="text">Mini golfing</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">5/9</div>
+                <img src="Outlook_Antigua.JPG" style="width:100%;">
+                <div class="text">Antigua</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">6/9</div>
+                <img src="Thanksgiving.jpg" style="width:100%;">
+                <div class="text">Friendsgiving</div>
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">7/9</div>
+                <img src="Us_Antigua_Holding.JPG" style="width:100%;">
+                <div class="text">Baecation #1</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">8/9</div>
+                <img src="us.JPG" style="width:100%;">
+                <div class="text">Also Baecation #1</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">9/9</div>
+                <img src="us2.jpg" style="width:100%;">
+                <div class="text"> Date</div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <!-- Dots for clicking -->
+        <div style="text-align:center;">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+        </div>
+
+        <!-- JavaScript for slideshow -->
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            // Auto slide show
+            setInterval(function () {
+                plusSlides(1);
+            }, 10000); // Change slide every 10 seconds
+        </script>
+
+        <div class="bottom-links">
+
+            <a href="letters.html">My Love Letter</a>
+            <a href="audio.html">Music</a>
+            <a href="video.html">Video</a>
+            <!-- <a href="favorites.html">Lists</a> 
+        <a href="text.html">Text</a> -->
+            <a href="adventures.html">Travel</a>
+            <a href="Financials.html"> Income Statement </a>
+            <a href="amortization.html"> Amortization </a>
+        </div>
+
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
