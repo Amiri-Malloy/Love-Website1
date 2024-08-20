@@ -6,7 +6,15 @@
     <meta name="description" content="Document with PDF Embed and Links">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Income Statement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        .pdf-container {
+            position: relative;
+            width: 100%;
+            height: 900px;
+            overflow: hidden;
+        }
+
         .pdf-controls {
             position: fixed;
             top: 10px;
@@ -21,20 +29,48 @@
             z-index: 1000;
         }
 
-        .pdf-controls button {
-            margin: 5px 0;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+        .pdf-controls .control-button {
+            margin: 5px;
+            width: 40px;
+            height: 40px;
             border: none;
-            border-radius: 5px;
+            border-radius: 50%;
             background-color: #007BFF;
             color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .pdf-controls button:hover {
+        .pdf-controls .control-button:hover {
             background-color: #0056b3;
+        }
+
+        .pdf-controls .control-button i {
+            font-size: 20px;
+        }
+
+        .pdf-controls .control-button::after {
+            content: attr(data-hover);
+            display: block;
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+
+        .pdf-controls .control-button:hover::after {
+            opacity: 1;
         }
 
         .bottom-links {
@@ -46,6 +82,8 @@
             padding: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            display: flex;
+            align-items: center;
         }
 
         .bottom-links a {
@@ -59,49 +97,24 @@
             text-decoration: underline;
             color: #007BFF;
         }
-
-        .pdf-controls .joke-button {
-            background-color: #FFC107;
-        }
-
-        .pdf-controls .joke-button:hover {
-            background-color: #FFA000;
-        }
-
-        .pdf-controls .joke-button:after {
-            content: attr(data-hover);
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 5px;
-            border-radius: 4px;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .pdf-controls .joke-button:hover:after {
-            visibility: visible;
-            opacity: 1;
-        }
     </style>
 </head>
 
 <body>
-    <div class="pdf-controls">
-        <button onclick="printPDF()">Print PDF</button>
-        <a href="LoveStatementpdf.pdf" download="LoveStatementpdf.pdf">
-            <button>Save PDF</button>
-        </a>
-        <button class="joke-button" data-hover="Click for a joke" onclick="showJoke()">Are you a dividend?</button>
+    <div class="pdf-container">
+        <div class="pdf-controls">
+            <a href="LoveStatementpdf.pdf" download="LoveStatementpdf.pdf" class="control-button" data-hover="Save">
+                <i class="fas fa-arrow-down"></i>
+            </a>
+            <button onclick="printPDF()" class="control-button" data-hover="Print">
+                <i class="fas fa-print"></i>
+            </button>
+            <button class="control-button" data-hover="Click for a joke" onclick="showJoke()">
+                <i class="fas fa-grin-beam"></i>
+            </button>
+        </div>
+        <embed src="LoveStatementpdf.pdf" type="application/pdf" width="100%" height="100%">
     </div>
-
-    <embed src="LoveStatementpdf.pdf" type="application/pdf" width="100%" height="900px">
 
     <div class="bottom-links">
         <a href="index.html">Home</a>
@@ -123,7 +136,7 @@
         }
 
         function showJoke() {
-            alert("Because loving you has been paying off");
+            alert("Are you a dividend? Because loving you has been paying off");
         }
     </script>
 </body>

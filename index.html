@@ -5,21 +5,30 @@
     <meta charset="UTF-8">
     <meta name="description" content="Expressing my love for Sean">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <title> Our Love Story </title>
+    <title>Our Love Story</title>
     <style>
         /* Add your CSS styling here */
         .slideshow-container {
             position: relative;
-            max-width: 100%;
+            width: 100%;
+            height: 100vh;
+            /* Full viewport height */
             margin: auto;
             overflow: hidden;
-            /* Prevents any overflow from images */
         }
 
         .mySlides {
             display: none;
-            position: relative;
+            position: absolute;
             width: 100%;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* Ensure images fit without cropping */
         }
 
         .fade {
@@ -106,21 +115,49 @@
         }
 
         .bottom-links {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
             text-align: center;
-            padding: 20px;
         }
 
         .bottom-links a {
             margin: 0 15px;
             text-decoration: none;
             color: #333;
+            position: relative;
         }
 
         .bottom-links a:hover {
             text-decoration: underline;
         }
-    </style>
 
+        .bottom-links a::after {
+            content: attr(data-hover);
+            display: block;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            white-space: nowrap;
+        }
+
+        .bottom-links a:hover::after {
+            opacity: 1;
+        }
+    </style>
 </head>
 
 <body style="background-color:#FFF0F5;">
@@ -149,54 +186,56 @@
         <div class="slideshow-container">
             <div class="mySlides fade">
                 <div class="numbertext">1/9</div>
-                <img src="Gala.JPG" style="width:100%;">
+                <img src="Gala.JPG" alt="Us at a gala">
                 <div class="text">Us at a gala</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2/9</div>
-                <img src="Baseball.JPG" style="width:100%;">
+                <img src="Baseball.JPG" alt="Our first METS game">
                 <div class="text">Our first METS game</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3/9</div>
-                <img src="Holding_WhiteDress_Water.JPG" style="width:100%;">
+                <img src="Holding_WhiteDress_Water.JPG" alt="Day 2 in Antigua">
                 <div class="text">Day 2 in Antigua</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">4/9</div>
-                <img src="MiniGolf_Date.JPG" style="width:100%;">
+                <img src="MiniGolf_Date.JPG" alt="Mini golfing">
                 <div class="text">Mini golfing</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">5/9</div>
-                <img src="Outlook_Antigua.JPG" style="width:100%;">
+                <img src="Outlook_Antigua.JPG" alt="Antigua">
                 <div class="text">Antigua</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">6/9</div>
-                <img src="Thanksgiving.jpg" style="width:100%;">
+                <img src="Thanksgiving.jpg" alt="Friendsgiving">
                 <div class="text">Friendsgiving</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">7/9</div>
-                <img src="Us_Antigua_Holding.JPG" style="width:100%;">
+                <img src="Us_Antigua_Holding.JPG" alt="Baecation #1">
                 <div class="text">Baecation #1</div>
             </div>
+
             <div class="mySlides fade">
                 <div class="numbertext">8/9</div>
-                <img src="us.JPG" style="width:100%;">
+                <img src="us.JPG" alt="Also Baecation #1">
                 <div class="text">Also Baecation #1</div>
             </div>
+
             <div class="mySlides fade">
                 <div class="numbertext">9/9</div>
-                <img src="us2.jpg" style="width:100%;">
-                <div class="text"> Date</div>
+                <img src="us2.jpg" alt="Date">
+                <div class="text">Date</div>
             </div>
 
             <!-- Next and previous buttons -->
@@ -213,6 +252,8 @@
             <span class="dot" onclick="currentSlide(5)"></span>
             <span class="dot" onclick="currentSlide(6)"></span>
             <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
         </div>
 
         <!-- JavaScript for slideshow -->
@@ -251,21 +292,14 @@
         </script>
 
         <div class="bottom-links">
-
-            <a href="letters.html">My Love Letter</a>
-            <a href="audio.html">Music</a>
-            <a href="video.html">Video</a>
-            <!-- <a href="favorites.html">Lists</a> 
-        <a href="text.html">Text</a> -->
-            <a href="adventures.html">Travel</a>
-            <a href="Financials.html"> Income Statement </a>
-            <a href="amortization.html"> Amortization </a>
+            <a href="letters.html" data-hover="Click for more love">My Love Letter</a>
+            <a href="audio.html" data-hover="Click for more love">Music</a>
+            <a href="video.html" data-hover="Click for more love">Video</a>
+            <a href="adventures.html" data-hover="Click for more love">Travel</a>
+            <a href="Financials.html" data-hover="Click for more love">Income Statement</a>
+            <a href="amortization.html" data-hover="Click for more love">Amortization</a>
         </div>
-
     </main>
-    <footer>
-
-    </footer>
 </body>
 
 </html>

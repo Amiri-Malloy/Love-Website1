@@ -3,32 +3,26 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
-
 </head>
+
 <header>
 </header>
-<h1 style="color: #4682B4;"> Letter to Sean: </h1>
-<!-- <style>
-    body {
-        background-color: #E0FFFF;
-    }
 
-    main p {
-        background-image: url('Gala.JPG');
-        background-size: cover;
-        padding: 20px;
-    }
-</style>-->
+<h1 style="color: #4682B4;">Letter to Sean:</h1>
 
 <style>
     body {
         background-color: #E0FFFF;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
     main {
         max-width: 800px;
         margin: 0 auto;
         padding: 20px;
+        flex-grow: 1;
     }
 
     a.home-link {
@@ -44,18 +38,49 @@
     a.home-link:hover {
         background-color: #357ABD;
     }
+
+    .bottom-links {
+        text-align: center;
+        padding: 10px;
+        background-color: #87CEEB;
+        /* Light sky blue background for visibility */
+        position: sticky;
+        bottom: 0;
+        width: 100%;
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .bottom-links a {
+        color: #000080;
+        /* Dark blue text color */
+        padding: 10px 20px;
+        text-decoration: none;
+        margin: 0 5px;
+        border: 2px solid #000080;
+        /* Dark blue border */
+        border-radius: 5px;
+        background-color: #ADD8E6;
+        /* Light blue background */
+        display: inline-block;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .bottom-links a:hover {
+        background-color: #87CEFA;
+        /* Lighter blue background on hover */
+        color: #000080;
+        /* Dark blue text color on hover */
+    }
 </style>
-
-
 
 <main>
     <p>
+        <!-- Your letter content here -->
         Before we met in person, you sent me a list of restaurants for me to choose from for our first date, and
         from then, I knew that I was going to like you. During our first FaceTime call, prior to meeting in person,
         I was in awe of how handsome you were. The first words I said were your hair is symmetrical and you look
         like a model. I knew then, that I could stare at you for hours, and get lost in your beautiful blue eyes
-        that would make even the bluest waters in the islands jealous.
-        <br>
+        that would make even the bluest waters in the islands jealous. <br>
         <br>
 
         During our first date, we realized that we had a lot in common, despite our differences in upbringing
@@ -182,19 +207,19 @@
         <br>
 
         I love you.
+        <br>
+        <br>
+
     </p>
 </main>
-<!--<a href="index.html"> Home </a>-->
-<div class="bottom-links">
-    <a href="index.html"> Home </a>
 
+<div class="bottom-links">
+    <a href="index.html">Home</a>
     <a href="audio.html">Music</a>
     <a href="video.html">Video</a>
-    <!-- <a href="favorites.html">Lists</a> 
-        <a href="text.html">Text</a> -->
     <a href="adventures.html">Travel</a>
-    <a href="Financials.html"> Income Statement </a>
-    <a href="amortization.html"> Amortization </a>
+    <a href="Financials.html">Income Statement</a>
+    <a href="amortization.html">Amortization</a>
 </div>
 
 </body>
