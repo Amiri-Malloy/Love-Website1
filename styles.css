@@ -5,29 +5,42 @@
     width: 100%;
     padding: 10px 0;
     z-index: 1000;
+    position: fixed;
+    /* Make sure it's positioned fixed */
+    bottom: 10px;
+    /* Adjust based on your needs */
+    left: 10px;
+    /* Adjust based on your needs */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    flex-wrap: wrap;
+    /* Allow links to wrap */
+    gap: 10px;
+    /* Space between links */
+    text-align: center;
 }
 
 .bottom-links a {
-    text-align: center;
-    padding: 10px 20px;
-    margin: 0 5px;
     text-decoration: none;
-    color: #000;
-    /* Text color */
+    color: #333;
+    font-size: 14px;
+    /* Adjust font size for better visibility */
+    padding: 5px 10px;
+    /* Add some padding for touch devices */
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Light background for better visibility */
     border: 2px solid #000;
     /* Border color */
-    border-radius: 5px;
-    display: inline-block;
-    background-color: #f0f0f0;
-    /* Default background color */
     transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
 }
 
 .bottom-links a:hover {
-    background-color: #ddd;
-    /* Light grey background on hover */
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Slightly darker background on hover */
     color: #000;
-    /* Text color on hover */
 }
 
 .bottom-links a::after {
@@ -54,4 +67,22 @@
 .letters-bottom-links a {
     background-color: #e0e0e0;
     /* Slightly different background color for visibility */
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 600px) {
+    .bottom-links {
+        bottom: 5px;
+        /* Adjust based on your needs */
+        left: 5px;
+        /* Adjust based on your needs */
+        padding: 5px;
+        font-size: 12px;
+        /* Smaller font size for mobile devices */
+    }
+
+    .bottom-links a {
+        padding: 4px 8px;
+        /* Adjust padding for mobile */
+    }
 }
